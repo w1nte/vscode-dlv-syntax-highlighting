@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DLV",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#line"
+		}
+	],
+	"repository": {
+		"comment": {
+			"patterns": [{
+				"name": "comment.line",
+				"match": "%(.*)"
+			}]
+		},
+
+		"line": {
+			"patterns": [{
+				"name": "keyword.control.dlv",
+				"match": "\\b([v])\\b"
+			}, {
+				"include": "#rules"
+			}, {
+				"include": "#complexterm"
+			}, {
+				"include": "#simpleterm"
+			}]
+		},
+
+		"rules": {
+			"name": "rule",
+			"patterns": [{
+				"match": "(:-)",
+				"captures": {
+					"1": {"name": "keyword.control.dlv"}
+				}
+			}]
+		},
+
+		"complexterm": {
+			"patterns": [{
+				"begin": "\\b([a-z][A-Za-z0-9_]*)([(])",
+				"beginCaptures": {
+					"1": {"name": "entity.name.function.dlv"},
+					"2": {"name": "punctuation.definition.parameters.begin.dlv"}
+				},
+				"end": "[)]",
+				"endCaptures": {
+					"0": {"name": "punctuation.definition.parameters.end.dlv"}
+				},
+				"patterns": [{
+					"include": "#complexterm"
+				},
+				{
+					"include": "#simpleterm"
+				},
+				{
+					"name": "punctuation.separator.parameter.js",
+					"match": ","
+				}]
+			}]
+		},
+
+		"simpleterm": {
+			"patterns": [{
+				"include": "#constant"
+			}, {
+				"include": "#variable"
+			}]
+		},
+
+		"constant": {
+			"patterns": [{
+				"name": "constant.dlv",
+				"match": "\\b([a-z0-9][A-Za-z0-9_]*)\\b"
+			}]
+		},
+
+		"variable": {
+			"patterns": [{
+				"name": "variable.dlv",
+				"match": "\\b([A-Z_][A-Za-z0-9_]*)\\b"
+			}]
+		},
+
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.dlv",
+				"match": "\\b(not)\\b"
+			}]
+		}
+	},
+	"scopeName": "source.dlv"
+}

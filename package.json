@@ -1,0 +1,25 @@
+{
+    "name": "dlv-lang",
+    "displayName": "DLV Language",
+    "description": "Syntax highlighting for the DLV language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dlv",
+            "aliases": ["DLV", "dlv"],
+            "extensions": [".dl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dlv",
+            "scopeName": "source.dlv",
+            "path": "./syntaxes/dlv.tmLanguage.json"
+        }]
+    }
+}
