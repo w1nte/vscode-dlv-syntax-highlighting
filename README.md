@@ -6,5 +6,8 @@ This extension for Visual Studio Code adds Syntax Highlighting to the DLV langua
 
 ## How to:
 
+1. [Download the ZIP](https://github.com/w1nte/VSC-DLV-Syntax-Highlighting/archive/main.zip).
+2. Unpack it into `<user home>/.vscode/extensions`
+3. Restart VSCode.
 
 **Enjoy!**
