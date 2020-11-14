@@ -11,3 +11,5 @@
 3. Restart VSCode.
 
 **Enjoy! :yum:**
+
+*Btw. please give this repo a :star:. You'll increase the chance that other fellow students find this repo too.*
