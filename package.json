@@ -2,7 +2,7 @@
     "name": "dlv-lang",
     "displayName": "DLV Language",
     "description": "Syntax highlighting for the DLV language",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.51.0"
     },
@@ -13,7 +13,7 @@
         "languages": [{
             "id": "dlv",
             "aliases": ["DLV", "dlv"],
-            "extensions": [".dl"],
+            "extensions": [".dl", ".hyp", ".obs"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
